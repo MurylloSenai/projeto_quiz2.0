@@ -1,4 +1,3 @@
-
 const botao = document.querySelector('#cadastrar')
 botao.addEventListener('click', async function(event){
     event.preventDefault(); // Impede o envio do formulário
@@ -8,7 +7,6 @@ botao.addEventListener('click', async function(event){
   const b = document.querySelector('#opcaob').value;
   const c = document.querySelector('#opcaoC').value;
   const d = document.querySelector('#opcaoD').value;
-  const resposta = document.querySelector('#reposta').value;
   const dificuldade = document.querySelector('#dificuldade').value;
   const correct_answer = document.querySelector('#correta').value;
   
@@ -25,7 +23,6 @@ botao.addEventListener('click', async function(event){
           b: b,
           c: c,
           d: d,
-          resposta: resposta,
           dificuldade: dificuldade,
           correct_answer: correct_answer            
       })
