@@ -29,3 +29,20 @@ button.dark-mode {
     background-color: #f5f5f5;
     color: #222;
 }
+
+
+/* 🌗 Tema Claro (padrão) */
+body {
+  transition: background 0.5s, color 0.5s;
+}
+
+/* 🌑 Tema Escuro */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+button.dark-mode {
+  background-color: #f5f5f5;
+  color: #222;
+}
