@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do adm</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+  <header role="banner">
+    <h1>Painel do administrador</h1>
+    <ul class="utilities">
+      <br>
+      <li class="users"><a href=".">Meu Perfil</a></li>
+      <li class="logout warn"><a href="../HTML/NovoCadastro.html">Sair</a></li>
+    </ul>
+  </header>
+  
+  <main role="main">
+    <section class="painel importante">
+      <h2>Escrever uma postagem</h2><br>
+      <form method="post">
+        <div class="doistercos">
+          Pergunta:
+          <input type="text" name="pergunta" id="pergunta" /><br/> <!--  ADICIONEI id="pergunta" -->
+
+          <p>Nível da Pergunta:</p>
+          <div id="alter">
+            <label>
+              Fácil
+              <input type="radio" name="dificuldade" value="facil" id="dificuldade"> <!--  ALTEREI name de "nivel" para "dificuldade" e adicionei id -->
+            </label>
+            <label>
+              Médio
+              <input type="radio" name="dificuldade" value="medio">
+            </label>
+            <label>
+              Difícil
+              <input type="radio" name="dificuldade" value="dificil">
+            </label>
+          </div>
+          
+          Alternativas:    
+          <section id="conteudo"><br>
+            <input type="text" name="alternativas" id="a" size="40"/><br> <!--  ALTEREI id de opcaoa → a -->
+            <input type="text" name="alternativas" id="b" size="40"/><br> <!--  ALTEREI id de opcaob → b -->
+            <input type="text" name="alternativas" id="c" size="40"/><br> <!--  ALTEREI id de opcaoC → c -->
+            <input type="text" name="alternativas" id="d" size="40"/><br> <!--  ALTEREI id de opcaoD → d -->
+          </section>
+
+          
+          <label for="correta">Alternativa correta:</label><br> <!--  ADICIONEI CAMPO NOVO -->
+          <input type="text" id="correta" name="correta" maxlength="1"/><br>
+
+        </div>
+
+        <div>
+          <input type="submit" id="cadastrar" value="Salvar" /> <!--  ALTEREI  id="cadastrar" -->
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="../JS/admin.js"></script>
+</body>
+</html>
