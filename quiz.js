@@ -15,6 +15,8 @@ const limiteQuestoes = 40;
 async function loadQuestion() {
     if (contadorQuestoes >= limiteQuestoes) {
         mensagem.innerHTML = `<strong>Quiz finalizado! Você acertou ${acertos} de ${limiteQuestoes} questões.</strong>`;
+        acertos++;
+        acertosSpan.innerText = `Acertos: ${acertos}`;
         return;
     }
 
@@ -58,8 +60,6 @@ function verificarResposta() {
     const respostaSelecionada = opcoesMarcadas.value;
 
     if (respostaSelecionada === respostaCorreta) {
-        acertos++;
-        acertosSpan.innerText = `Acertos: ${acertos}`;
         mensagem.innerHTML = `<span style="color: green;">Resposta correta!</span>`;
     } else {
         mensagem.innerHTML = `<span style="color: red;">Resposta incorreta. A correta era: ${respostaCorreta.toUpperCase()}</span>`;
@@ -68,11 +68,12 @@ function verificarResposta() {
     return true;
 }
 
-proxima.addEventListener("click", () => {
+proxima.addEventListener("click", (event) => {
+    event.preventDefault();
     const foiRespondida = verificarResposta();
-    if (!foiRespondida) return;
-
-    setTimeout(() => {
-        loadQuestion();
-    }, 1500);
+    
+    if (!foiRespondida){
+        return
+    } 
+    loadQuestion();
 });
