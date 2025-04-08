@@ -30,11 +30,18 @@ document.querySelector("#botaologin").addEventListener("click", async (event) =>
             const response = await fetch(`http://localhost:3000/usuario/senha`);
             if (response.status != 200) {
 
-                // Redireciona para a página home
-                alert('Login realizado com sucesso!!')
-                  window.location.replace('../HTML/Quizzz.html')
+                  if (data.tipo === "admin") {
+                    // Redireciona para a página do administrador
+                    alert('Bem-vindo, administrador!');
+                    window.location.replace('../HTML/admin.html');
+                } else if (data.tipo === "aluno") {
+                    // Redireciona para a página do aluno
+                    alert('Bem-vindo, aluno!');
+                    window.location.replace('../HTML/quiz.html');
+                } else {
+                    alert('Tipo de usuário não reconhecido.', 'danger');
+                }
             } 
-            
             else {
                 alert('Usuário ou senha incorretos!', 'danger');
             }
