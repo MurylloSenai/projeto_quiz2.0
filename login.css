@@ -1,0 +1,17 @@
+.status {
+    display: flex;
+    gap: 1rem; /* Espaço entre os labels */
+    margin: 1rem 0; /* Espaço vertical em relação aos outros elementos */
+}
+
+.status label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre o texto e o botão de rádio */
+    font-size: 1rem; /* Ajuste do tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o label */
+}
+
+.status input[type="radio"] {
+    cursor: pointer;
+}
