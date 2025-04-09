@@ -55,6 +55,7 @@ document.querySelector("#botaologin").addEventListener("click", async (event) =>
     }
 });
 
+
 // cadastro
 document.querySelector("#cadastrar").addEventListener("click", async (event) => {
       event.preventDefault();
@@ -62,11 +63,12 @@ document.querySelector("#cadastrar").addEventListener("click", async (event) => 
       const usuario = document.querySelector("#usuario").value;
       const senha = document.querySelector("#senha").value;
       const senhaConfirmacao= document.querySelector("#senhaConfirmacao").value;
+      const status = document.querySelector('input[name="status"]:checked').value;
     
       if (senha !== senhaConfirmacao) {
           alert('As senhas não se coincidem')
       }
-    
+
       try {
           const response = await fetch('http://localhost:3000/usuario',{
               method: "POST",
@@ -76,7 +78,8 @@ document.querySelector("#cadastrar").addEventListener("click", async (event) => 
               body: JSON.stringify({
           
                   usuario: usuario,
-                  senha: senha
+                  senha: senha,
+                  status: status
                   
               })
           })
@@ -93,6 +96,7 @@ document.querySelector("#cadastrar").addEventListener("click", async (event) => 
           alert("Erro ao tentar cadastrar. Tente novamente mais tarde.", "danger");
       }
     });
+
 
  
 //cadastro de usuario
