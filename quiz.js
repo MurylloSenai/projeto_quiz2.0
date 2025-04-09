@@ -15,8 +15,7 @@ const limiteQuestoes = 40;
 async function loadQuestion() {
     if (contadorQuestoes >= limiteQuestoes) {
         mensagem.innerHTML = `<strong>Quiz finalizado! Você acertou ${acertos} de ${limiteQuestoes} questões.</strong>`;
-        acertos++;
-        acertosSpan.innerText = `Acertos: ${acertos}`;
+        
         return;
     }
 
@@ -60,7 +59,8 @@ function verificarResposta() {
     const respostaSelecionada = opcoesMarcadas.value;
 
     if (respostaSelecionada === respostaCorreta) {
-        mensagem.innerHTML = `<span style="color: green;">Resposta correta!</span>`;
+       
+        acertos++;
     } else {
         mensagem.innerHTML = `<span style="color: red;">Resposta incorreta. A correta era: ${respostaCorreta.toUpperCase()}</span>`;
     }
