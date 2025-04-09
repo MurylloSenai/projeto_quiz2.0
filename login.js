@@ -95,4 +95,22 @@ document.querySelector("#cadastrar").addEventListener("click", async (event) => 
     });
 
  
+//cadastro de usuario
+routes.post('/usuario', async (req, res)=>{
+    
+    try {
+        const {usuario, senha, status} = req.body;
 
+        const hash = await Criarhash(senha, 10)
+        
+        await sql`insert into usuarios(usuario, senha, status)
+        values(${usuario},${hash},${status})`
+
+        return res.status(201).json('ok')
+
+    } catch(error){
+        console.log(error)
+        return res.status(500).json('algo deu errado')
+
+    }
+})
